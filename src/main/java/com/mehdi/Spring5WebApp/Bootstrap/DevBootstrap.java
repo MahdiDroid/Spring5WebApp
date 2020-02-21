@@ -6,8 +6,10 @@ import com.mehdi.Spring5WebApp.model.Author;
 import com.mehdi.Spring5WebApp.model.Book;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.stereotype.Component;
 
-public class DevBootstrap extends ApplicationListener<ContextRefreshedEvent> {
+@Component
+public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
