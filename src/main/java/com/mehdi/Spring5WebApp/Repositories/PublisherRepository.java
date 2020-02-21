@@ -1,4 +1,7 @@
 package com.mehdi.Spring5WebApp.Repositories;
 
-public interface PublisherRepository {
+import com.mehdi.Spring5WebApp.model.Publisher;
+import org.springframework.data.repository.CrudRepository;
+
+public interface PublisherRepository extends CrudRepository<Publisher, Long> {
 }
