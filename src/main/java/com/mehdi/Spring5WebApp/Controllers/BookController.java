@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BookController {
+
     private BookRepository bookRepository;
 
     public BookController(BookRepository bookRepository) {
