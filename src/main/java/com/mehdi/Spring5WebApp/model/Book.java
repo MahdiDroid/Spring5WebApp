@@ -3,12 +3,16 @@ package com.mehdi.Spring5WebApp.model;
 import javax.persistence.Entity;
 import java.util.HashSet;
 import java.util.Set;
+
 @Entity
 public class Book {
     private String title;
     private String isbn;
     private String publisher;
     private Set<Author> authors = new HashSet<>();
+
+    public Book() {
+    }
 
     public Book(String title, String isbn, String publisher) {
         this.title = title;
