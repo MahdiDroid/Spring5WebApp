@@ -1,8 +1,9 @@
 package com.mehdi.Spring5WebApp.model;
 
+import javax.persistence.Entity;
 import java.util.HashSet;
 import java.util.Set;
-
+@Entity
 public class Author {
 
     private String firstName;
