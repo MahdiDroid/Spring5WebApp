@@ -6,6 +6,8 @@ import java.util.Set;
 @Entity
 public class Author {
 
+
+    private long id;
     private String firstName;
     private String lastName;
 
@@ -20,6 +22,14 @@ public class Author {
         this.firstName = firstName;
         this.lastName = lastName;
         this.books = books;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
