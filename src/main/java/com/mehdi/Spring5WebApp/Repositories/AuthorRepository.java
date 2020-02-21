@@ -5,59 +5,38 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface AuthorRepository extends CrudRepository<Author,long>{
-    @Override
-    default <S extends Author> S save(S s) {
-        return null;
-    }
+public interface AuthorRepository extends CrudRepository<Author, Long>{
 
     @Override
-    default <S extends Author> Iterable<S> saveAll(Iterable<S> iterable) {
-        return null;
-    }
+    <S extends Author> S save(S s);
 
     @Override
-    default Optional<Author> findById(long l) {
-        return Optional.empty();
-    }
+    <S extends Author> Iterable<S> saveAll(Iterable<S> iterable);
 
     @Override
-    default boolean existsById(long l) {
-        return false;
-    }
+    Optional<Author> findById(Long aLong);
 
     @Override
-    default Iterable<Author> findAll() {
-        return null;
-    }
+    boolean existsById(Long aLong);
 
     @Override
-    default Iterable<Author> findAllById(Iterable<long> iterable) {
-        return null;
-    }
+    Iterable<Author> findAll();
 
     @Override
-    default long count() {
-        return 0;
-    }
+    Iterable<Author> findAllById(Iterable<Long> iterable);
 
     @Override
-    default void deleteById(long l) {
-
-    }
+    long count();
 
     @Override
-    default void delete(Author author) {
-
-    }
+    void deleteById(Long aLong);
 
     @Override
-    default void deleteAll(Iterable<? extends Author> iterable) {
-
-    }
+    void delete(Author author);
 
     @Override
-    default void deleteAll() {
+    void deleteAll(Iterable<? extends Author> iterable);
 
-    }
+    @Override
+    void deleteAll();
 }
