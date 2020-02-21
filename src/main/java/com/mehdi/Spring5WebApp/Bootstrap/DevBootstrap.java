@@ -2,8 +2,10 @@ package com.mehdi.Spring5WebApp.Bootstrap;
 
 import com.mehdi.Spring5WebApp.Repositories.AuthorRepository;
 import com.mehdi.Spring5WebApp.Repositories.BookRepository;
+import com.mehdi.Spring5WebApp.Repositories.PublisherRepository;
 import com.mehdi.Spring5WebApp.model.Author;
 import com.mehdi.Spring5WebApp.model.Book;
+import com.mehdi.Spring5WebApp.model.Publisher;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -17,10 +19,12 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
     }
     private AuthorRepository authorRepository;
     private BookRepository bookRepository;
+    private PublisherRepository publisherRepository;
 
-    public DevBootstrap(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public DevBootstrap(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
+        this.publisherRepository = publisherRepository;
     }
 
     private void initialData(){
