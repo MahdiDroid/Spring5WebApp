@@ -29,9 +29,14 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
     private void initialData(){
 
+        Publisher publisher = new Publisher();
+        publisher.setName("foo");
+        publisher.setAddress("NY");
+        publisherRepository.save(publisher);
+
         //mehdi
         Author mehdi = new Author("Mehdi","mhmvd");
-        Book ddd = new Book("Domain driven design","1234","Collins");
+        Book ddd = new Book("Domain driven design","1234",publisher);
         mehdi.getBooks().add(ddd);
         ddd.getAuthors().add(mehdi);
         authorRepository.save(mehdi);
@@ -39,7 +44,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
         //Rod
         Author bob = new Author("bob","jessy");
-        Book ttt = new Book("Test Driven   design","567","Oreilly");
+        Book ttt = new Book("Test Driven   design","567",publisher);
         mehdi.getBooks().add(ttt);
         ddd.getAuthors().add(bob);
 
