@@ -11,10 +11,10 @@
         <th>FirstName</th>
         <th>LastName</th>
     </tr>
-    <tr th:each="Auhor : ${authors}">
+    <tr th:each="Author : ${authors}">
         <td th:text="${Author.id}">123</td>
         <td th:text="${Author.firstName}">spring in action</td>
-        <td th:text="${book.lastName}">wrox</td>
+        <td th:text="${Author.lastName}">wrox</td>
 
     </tr>
 </table>
